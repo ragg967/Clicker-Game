@@ -1,0 +1,25 @@
+[gd_scene load_steps=6 format=3 uid="uid://frjcmd7rs4aw"]
+
+[ext_resource type="Script" uid="uid://bbi2idjk5w4ut" path="res://script/ball.gd" id="1_d8dhm"]
+[ext_resource type="Texture2D" uid="uid://bo22a55pwrhtr" path="res://assets/ball.png" id="2_h6iok"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_d8dhm"]
+bounce = 0.5
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4a1xm"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_h6iok"]
+
+[node name="Ball" type="RigidBody2D"]
+input_pickable = true
+physics_material_override = SubResource("PhysicsMaterial_d8dhm")
+script = ExtResource("1_d8dhm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(2, 2)
+shape = SubResource("CircleShape2D_4a1xm")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="CollisionShape2D"]
+scale = Vector2(20, 20)
+mesh = SubResource("QuadMesh_h6iok")
+texture = ExtResource("2_h6iok")

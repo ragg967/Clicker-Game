@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://e76rhtb5im4m"]
+
+[ext_resource type="Script" uid="uid://c0jeueuf32pwe" path="res://script/score_borad.gd" id="1_onfsl"]
+
+[node name="score_borad" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="score_borad" type="Label" parent="."]
+layout_mode = 1
+offset_right = 61.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Score: 0"
+script = ExtResource("1_onfsl")

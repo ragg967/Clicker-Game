@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=3 uid="uid://3xy1ldf3oceu"]
+
+[ext_resource type="PackedScene" uid="uid://bjxbujsg6652f" path="res://scene/target.tscn" id="1_80ewm"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_r5nqj"]
+distance = -325.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_80ewm"]
+distance = -322.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_3h2xa"]
+distance = -576.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_n28be"]
+distance = -582.0
+
+[node name="world" type="Node"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, 2)
+rotation = 3.14159
+shape = SubResource("WorldBoundaryShape2D_r5nqj")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, 1)
+shape = SubResource("WorldBoundaryShape2D_80ewm")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1, 0)
+rotation = 1.5708
+shape = SubResource("WorldBoundaryShape2D_3h2xa")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-7, 0)
+rotation = -1.5708
+shape = SubResource("WorldBoundaryShape2D_n28be")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="target" parent="." instance=ExtResource("1_80ewm")]
