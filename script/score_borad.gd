@@ -1,7 +1,10 @@
 extends Label
 
 var score := 0.0
-var points_per_hit := 1.0 # This will be refracned as pph is other places
+@onready var more_pph = get_node("/root/main/store/more_pph")
+@onready var pph_multiplier = get_node("/root/main/store/pph_multiplier")
+@onready var ball = get_node("/root/main/ball")
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -9,12 +12,21 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func _process(_delta: float) -> void:
+	text = "Score: %.2f" % score
+
+
+func _pph_multiplier():
+	if score >= pph_multiplier.price:
+		score -= pph_multiplier.price
+		ball.mult += 0.1
+
 
 func _more_pph():
-	points_per_hit += 0.1
+	if score >= more_pph.price:
+		score -= more_pph.price
+		ball.points_per_hit += 0.1
+
 
 func _update_score():
-	score += points_per_hit
-	text = "Score: %s" % score
+	score += ball.points_per_hit * ball.mult

@@ -2,7 +2,10 @@ extends RigidBody2D
 
 var dragging := false
 var previous_mouse_position := Vector2()
+var points_per_hit := 1.0  # This will be refracned as pph in other places
+var mult := 1.0  # This will be refracned as pph mult in other places
 @export var throw_impulse_multiplier := 10.0  # Adjust this to control throw strength
+
 
 # Check if ball is grabbed
 func _input_event(_viewport, event, _shape_idx):
@@ -17,11 +20,14 @@ func _input_event(_viewport, event, _shape_idx):
 			# Release the ball with velocity
 			dragging = false
 			# Calculate velocity based on mouse movement
-			var velocity = (get_global_mouse_position() - previous_mouse_position) * throw_impulse_multiplier
+			var velocity = (
+				(get_global_mouse_position() - previous_mouse_position) * throw_impulse_multiplier
+			)
 			# Always unfreeze when releasing the ball
 			freeze = false
 			# Apply impulse to throw the ball
 			apply_central_impulse(velocity)
+
 
 # If being dragged, move ball with cursor
 func _physics_process(_delta):

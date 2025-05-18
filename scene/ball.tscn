@@ -11,6 +11,8 @@ bounce = 0.5
 [sub_resource type="QuadMesh" id="QuadMesh_h6iok"]
 
 [node name="Ball" type="RigidBody2D"]
+collision_layer = 3
+collision_mask = 3
 input_pickable = true
 physics_material_override = SubResource("PhysicsMaterial_d8dhm")
 script = ExtResource("1_d8dhm")
