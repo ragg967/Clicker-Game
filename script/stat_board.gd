@@ -17,15 +17,15 @@ func _process(_delta: float) -> void:
 
 
 func _pph_multiplier():
-	if score >= pph_multiplier.price:
-		score -= pph_multiplier.price
-		ball.mult += 0.1
+	score -= pph_multiplier.price
+	ball.mult += 0.1
+	pph_multiplier.price *= 1.1
 
 
 func _more_pph():
-	if score >= more_pph.price:
-		score -= more_pph.price
-		ball.points_per_hit += 0.1
+	score -= more_pph.price
+	ball.points_per_hit += 0.1
+	more_pph.price *= 1.1
 
 
 func _update_score():

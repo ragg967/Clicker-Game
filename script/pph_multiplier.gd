@@ -22,9 +22,7 @@ func _process(_delta: float) -> void:
 
 func _on_pressed() -> void:
 	if stat_board.score >= price:
-		price *= 1.1
 		emit_signal(&"pph_multiplier")
 		text = "PPH Multiplier: %.2f" % price
 	else:
 		print("your broke XD")
-	emit_signal(&"pph_multiplier")
