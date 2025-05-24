@@ -15,7 +15,7 @@ anchor_right = 1.0
 offset_left = -125.0
 offset_bottom = 31.0
 grow_horizontal = 0
-text = "More PPH: 5.00"
+text = "More PPH: 0.00"
 script = ExtResource("1_24njt")
 
 [node name="pph_multiplier" type="Button" parent="."]
@@ -27,7 +27,7 @@ offset_left = -178.0
 offset_top = 50.0
 offset_bottom = 81.0
 grow_horizontal = 0
-text = "PPH Multiplier: 100.00"
+text = "PPH Multiplier: 0.00"
 script = ExtResource("2_tq3ax")
 
 [connection signal="pressed" from="more_pph" to="more_pph" method="_on_pressed"]

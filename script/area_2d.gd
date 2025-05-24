@@ -8,11 +8,11 @@ func _ready() -> void:
 	# Wait until scene is fully loaded
 	await get_tree().process_frame
 	# Find the UI node in the scene tree
-	var score_board = get_node("/root/main/score_borad/score_borad")  # Adjust path as needed
+	var score_board = get_node("/root/main/stat_board/score_board")  # Adjust path as needed
 	if score_board:
 		update_score.connect(score_board._update_score)
 	else:
-		push_error("score_borad node not found!")
+		push_error("stat_board node not found!")
 
 
 func _on_body_shape_entered(

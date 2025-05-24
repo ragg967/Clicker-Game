@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://frjcmd7rs4aw" path="res://scene/ball.tscn" id="1_v0l8b"]
 [ext_resource type="PackedScene" uid="uid://3xy1ldf3oceu" path="res://scene/world.tscn" id="2_wp4xf"]
 [ext_resource type="PackedScene" uid="uid://45mx83rpvc34" path="res://scene/store.tscn" id="4_0ha60"]
-[ext_resource type="PackedScene" uid="uid://e76rhtb5im4m" path="res://scene/score_borad.tscn" id="4_brvut"]
+[ext_resource type="PackedScene" uid="uid://e76rhtb5im4m" path="res://scene/stat_board.tscn" id="4_brvut"]
 
 [node name="main" type="Node"]
 
@@ -12,14 +12,14 @@ position = Vector2(0, 220)
 
 [node name="world" parent="." instance=ExtResource("2_wp4xf")]
 
-[node name="score_borad" parent="." instance=ExtResource("4_brvut")]
-offset_left = -570.0
-offset_top = -319.0
-offset_right = -530.0
-offset_bottom = -279.0
-
 [node name="store" parent="." instance=ExtResource("4_0ha60")]
 offset_left = 571.0
 offset_top = -320.0
 offset_right = 571.0
 offset_bottom = -320.0
+
+[node name="stat_board" parent="." instance=ExtResource("4_brvut")]
+offset_left = -569.0
+offset_top = -318.0
+offset_right = -569.0
+offset_bottom = -318.0

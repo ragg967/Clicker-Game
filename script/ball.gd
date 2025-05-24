@@ -1,10 +1,10 @@
 extends RigidBody2D
 
+@export var throw_impulse_multiplier := 20.0  # Adjust this to control throw strength
 var dragging := false
 var previous_mouse_position := Vector2()
 var points_per_hit := 1.0  # This will be refracned as pph in other places
 var mult := 1.0  # This will be refracned as pph mult in other places
-@export var throw_impulse_multiplier := 10.0  # Adjust this to control throw strength
 
 
 # Check if ball is grabbed
